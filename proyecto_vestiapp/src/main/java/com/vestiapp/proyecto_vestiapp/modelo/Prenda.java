@@ -10,19 +10,25 @@ import lombok.*;
 @Getter @Setter
 public class Prenda {
 	 
-    @Id  
-    @Column(length=6) 
-    int numero;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     
     @Column(length=50) 
     @Required  
     String nombre;
     
+    @ManyToOne
     @DescriptionsList
     Categoria categoria;
     
+    @ManyToOne
     @DescriptionsList
     Tienda tienda;
+    
+    @ManyToOne
+    @JoinColumn(name="proveedor_id")
+    private Proveedor proveedor;
     
     @Money
     double precio;

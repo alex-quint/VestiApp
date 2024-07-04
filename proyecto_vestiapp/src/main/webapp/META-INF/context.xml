@@ -17,20 +17,21 @@
 	correspodiente a tu base de datos al pom.xml de tu proyecto.	
 	-->
 	 
-	<!-- HSQLDB -->   	
+	<!-- HSQLDB   	
     <Resource name="jdbc/proyecto_vestiappDS" auth="Container" type="javax.sql.DataSource"
 	      maxTotal="20" maxIdle="5" maxWaitMillis="10000"
 	      username="sa" password="" 
 	      driverClassName="org.hsqldb.jdbc.JDBCDriver"
 	      url="jdbc:hsqldb:hsql://localhost:1666"/>
-	      
-	<!-- MySQL       
+     --> 
+     
+	<!-- MySQ -->      
     <Resource name="jdbc/proyecto_vestiappDS" auth="Container" type="javax.sql.DataSource"
 	      maxTotal="20" maxIdle="5" maxWaitMillis="10000"
-	      username="root" password="" 
+	      username="root" password="Sebas2008*MySQL" 
 	      driverClassName="com.mysql.cj.jdbc.Driver"
 	      url="jdbc:mysql://localhost:3306/proyecto_vestiappdb"/>	      
-	-->      
+     
 	
 	<!-- PostgreSQL 
 	<Resource name="jdbc/proyecto_vestiappDS" auth="Container" type="javax.sql.DataSource"

@@ -12,9 +12,9 @@ import lombok.*;
 @Getter @Setter
 public class Proveedor {
 	
-	@Id  
-    @Column(length=6) 
-    int identificador;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 	
 	@Column(length=50) 
     @Required  
@@ -23,6 +23,6 @@ public class Proveedor {
 	@Embedded 
     Direccion direccion; 
 	
-	@DescriptionsList
+	@OneToMany(mappedBy="proveedor")
 	Collection<Prenda> prendas;
 }

@@ -11,9 +11,9 @@ import lombok.*;
 @Entity 
 @Getter @Setter
 public class Tienda {
-	@Id  
-    @Column(length=6) 
-    int identificador;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 	
 	@Column(length=50) 
     @Required  
@@ -22,6 +22,6 @@ public class Tienda {
 	@Embedded 
     Direccion direccion; 
 	
-	@DescriptionsList
+	@OneToMany(mappedBy="tienda")
 	Collection<Prenda> prendas;
 }
